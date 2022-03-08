@@ -10,7 +10,7 @@ import PrivateRoute from './component/Home/Login/PrivateRoute/PrivateRoute';
 import Services from './component/Services/Services';
 import NotFound from './component/Home/NotFound/NotFound';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
-import Deshboard from './pages/Deshboard/Deshboard';
+// import Deshboard from './pages/Deshboard/Deshboard';
 import Home from './pages/Home/Home';
 
 import Booking from './component/Booking/Booking';
@@ -47,9 +47,9 @@ function App() {
             {/* <Route exact path="/payment">
               <Pyment> </Pyment>
             </Route> */}
-            <PrivateRoute path="/dashboard">
+            {/* <PrivateRoute path="/dashboard">
               <Deshboard></Deshboard>
-            </PrivateRoute>
+            </PrivateRoute> */}
             <Route exact path="/login">
               {' '}
               <Login></Login>{' '}

@@ -29,7 +29,8 @@ p {
   background: #fd7709 !important;
   color: white !important;
   border: none !important;
-  border-radius: 50px;
+  border-radius: 10px;
+  width: 150px;
 }
 
 .btn-main:hover {

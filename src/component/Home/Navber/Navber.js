@@ -61,7 +61,7 @@ const Navber = () => {
                   />
                 }
               >
-                <div className="text-center d-flex justify-content-center  align-items-center ">
+                <div className="text-center d-flex justify-content-center  align-items-center p-2 ">
                   <div>
                     <h6>{displayName}</h6>
                     <p className="m-0 ">{email}</p>

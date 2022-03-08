@@ -91,7 +91,7 @@ const Contact = () => {
                 </div>
               </Col>
               <Col xs={12}>
-                <button className="btn-lrg submit-btn btn-main">
+                <button className="btn-md submit-btn send-btn ">
                   Send Message
                 </button>
               </Col>

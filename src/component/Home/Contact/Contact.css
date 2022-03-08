@@ -3,10 +3,14 @@
   padding-top: 85px;
   padding-bottom: 85px;
 }
-
+.send-btn {
+  border: none;
+  background-color: rgb(255, 94, 0);
+  color: wheat;
+}
 .contact-section h1 {
   font-family: 'Poppins', sans-serif, 'arial';
-  font-weight: 600;
+  font-weight: 500;
   font-size: 3rem;
   color: white;
   text-align: center;

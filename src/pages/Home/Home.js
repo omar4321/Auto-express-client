@@ -4,7 +4,7 @@ import Banner from '../../component/Home/Banner/Banner';
 import About from '../../component/Home/About/About';
 import Contact from '../../component/Home/Contact/Contact';
 import Fotter from '../../component/Home/Footer/Fotter';
-// import Services from '../../component/Services/Services';
+import Services from '../../component/Services/Services';
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
       <Navber />
       <Banner />
       <About />
-      {/* <Services /> */}
+      <Services />
       <Contact />
       <Fotter />
     </div>

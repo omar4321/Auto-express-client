@@ -6,7 +6,7 @@ const Services = () => {
   const [item, setItem] = useState(6);
 
   useEffect(() => {
-    fetch('')
+    fetch('https://immense-citadel-04448.herokuapp.com/carcollection')
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
@@ -23,15 +23,12 @@ const Services = () => {
 
         <div className="text-center mb-5 ">
           {' '}
-          <button
-            className="btn-main    p-3 "
+          <span
+            className="btn-main p-4  "
             onClick={() => setItem(service.length)}
           >
-            <h6>
-              {' '}
-              See more <br /> <i class="fas fa-angle-down"></i>
-            </h6>
-          </button>
+            <i class="fas fa-angle-down"></i>
+          </span>
         </div>
       </div>
     </div>
