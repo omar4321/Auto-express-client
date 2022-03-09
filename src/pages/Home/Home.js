@@ -5,16 +5,21 @@ import About from '../../component/Home/About/About';
 import Contact from '../../component/Home/Contact/Contact';
 import Fotter from '../../component/Home/Footer/Fotter';
 import Services from '../../component/Services/Services';
+import DashboardSlider from '../../component/Dashboard/DashboardSlider/DashboardSlider';
+import MakeAdmin from '../../component/Dashboard/MakeAdmin/MakeAdmin';
+import AddServices from '../../component/Dashboard/AddServices/AddServices';
 
 const Home = () => {
   return (
     <div id="home">
-      <Navber />
+      {/* <Navber />
       <Banner />
       <About />
       <Services />
       <Contact />
-      <Fotter />
+      <Fotter /> */}
+      <MakeAdmin></MakeAdmin>
+      <AddServices></AddServices>
     </div>
   );
 };
