@@ -8,16 +8,18 @@ import Services from '../../component/Services/Services';
 import DashboardSlider from '../../component/Dashboard/DashboardSlider/DashboardSlider';
 import MakeAdmin from '../../component/Dashboard/MakeAdmin/MakeAdmin';
 import AddServices from '../../component/Dashboard/AddServices/AddServices';
+import AllFeedback from '../../component/AllFeedback/AllFeedback';
 
 const Home = () => {
   return (
     <div id="home">
-      {/* <Navber />
+      <Navber />
       <Banner />
       <About />
       <Services />
+      <AllFeedback></AllFeedback>
       <Contact />
-      <Fotter /> */}
+      <Fotter />
       <MakeAdmin></MakeAdmin>
       <AddServices></AddServices>
     </div>

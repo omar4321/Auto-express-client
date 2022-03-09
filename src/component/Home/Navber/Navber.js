@@ -24,7 +24,7 @@ const Navber = () => {
           </h3>
         </Navbar.Brand>
         <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end " id="nav-ui">
+        <Navbar.Collapse className="justify-content-center " id="nav-ui">
           <Nav.Link as={HashLink} to="/home#home" className="nav-color">
             Home
           </Nav.Link>
