@@ -18,9 +18,14 @@ export default function MakeAdmin() {
   const emailSubmit = (e) => {
     e.preventDefault();
     Axios.post('http://localhost:5000/addAdmin', email)
-      .then(() => {})
-      .catch(() => {});
+      .then(() => {
+        alert('Make admin Successfully');
+      })
+      .catch(() => {
+        alert('Can not make admin. Please Try again later');
+      });
   };
+
   return (
     <>
       <div>

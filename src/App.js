@@ -10,12 +10,13 @@ import PrivateRoute from './component/Home/Login/PrivateRoute/PrivateRoute';
 import Services from './component/Services/Services';
 import NotFound from './component/Home/NotFound/NotFound';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
-// import Deshboard from './pages/Deshboard/Deshboard';
 import Home from './pages/Home/Home';
 
 import Booking from './component/Booking/Booking';
-// import Addnewcar from './component/Dashboard/Addnewcar/Addnewcar';
-// import Pyment from './component/Dashboard/Pyment';
+import DashboardSlider from './component/Dashboard/DashboardSlider/DashboardSlider';
+import MakeAdmin from './component/Dashboard/MakeAdmin/MakeAdmin';
+import AddServices from './component/Dashboard/AddServices/AddServices';
+import Feedback from './component/Dashboard/Feedback/Feedback';
 
 function App() {
   return (
@@ -41,15 +42,18 @@ function App() {
             <Route exact path="/contact">
               <Contact></Contact>
             </Route>
-            {/* <Route exact path="/addcar">
-              <Addnewcar />
-            </Route> */}
-            {/* <Route exact path="/payment">
-              <Pyment> </Pyment>
-            </Route> */}
-            {/* <PrivateRoute path="/dashboard">
-              <Deshboard></Deshboard>
-            </PrivateRoute> */}
+            <PrivateRoute path="/dashboard">
+              <DashboardSlider></DashboardSlider>
+            </PrivateRoute>
+            <PrivateRoute path="/addService">
+              <AddServices />
+            </PrivateRoute>
+            <PrivateRoute path="/makeAdmin">
+              <MakeAdmin></MakeAdmin>
+            </PrivateRoute>
+            <PrivateRoute path="/feedback">
+              <Feedback />
+            </PrivateRoute>
             <Route exact path="/login">
               {' '}
               <Login></Login>{' '}
@@ -61,7 +65,6 @@ function App() {
             <PrivateRoute exact path="/booking/:serviceId">
               <Booking></Booking>
             </PrivateRoute>
-            <PrivateRoute exact path="/myorder"></PrivateRoute>
             <Route exact path="/*">
               <NotFound> </NotFound>
             </Route>

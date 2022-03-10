@@ -40,9 +40,6 @@ const Navber = () => {
           <Nav.Link as={HashLink} to="/home#contact" className="nav-color">
             Contact Us
           </Nav.Link>
-          <Nav.Link as={HashLink} to="/myorder" className="nav-color">
-            my order
-          </Nav.Link>
 
           {user?.displayName || user?.email ? (
             <>

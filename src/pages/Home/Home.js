@@ -5,10 +5,7 @@ import About from '../../component/Home/About/About';
 import Contact from '../../component/Home/Contact/Contact';
 import Fotter from '../../component/Home/Footer/Fotter';
 import Services from '../../component/Services/Services';
-import DashboardSlider from '../../component/Dashboard/DashboardSlider/DashboardSlider';
-import MakeAdmin from '../../component/Dashboard/MakeAdmin/MakeAdmin';
-import AddServices from '../../component/Dashboard/AddServices/AddServices';
-import AllFeedback from '../../component/AllFeedback/AllFeedback';
+import ClientFeedBack from '../ClientFeedBack/ClientFeedBack';
 
 const Home = () => {
   return (
@@ -17,11 +14,9 @@ const Home = () => {
       <Banner />
       <About />
       <Services />
-      <AllFeedback></AllFeedback>
+      <ClientFeedBack></ClientFeedBack>
       <Contact />
       <Fotter />
-      <MakeAdmin></MakeAdmin>
-      <AddServices></AddServices>
     </div>
   );
 };

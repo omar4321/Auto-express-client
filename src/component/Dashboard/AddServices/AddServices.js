@@ -6,7 +6,13 @@ import DashboardSlider from '../DashboardSlider/DashboardSlider';
 import DashboardStatus from '../DashbordPageStatus/DashboardStatus';
 
 export default function AddServices() {
+  document.body.style.backgroundColor = '#e5e5e5';
   const [files, setFiles] = useState([]);
+  const [service, setService] = useState({
+    title: '',
+    description: '',
+  });
+
   return (
     <div>
       <Row>
