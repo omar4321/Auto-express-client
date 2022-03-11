@@ -26,7 +26,7 @@ const DashboardSlider = () => {
       }
     );
   }, [user]);
-  console.log(isAdminHere);
+  // console.log(isAdminHere);
   return (
     <>
       <div

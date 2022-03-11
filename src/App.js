@@ -17,59 +17,70 @@ import DashboardSlider from './component/Dashboard/DashboardSlider/DashboardSlid
 import MakeAdmin from './component/Dashboard/MakeAdmin/MakeAdmin';
 import AddServices from './component/Dashboard/AddServices/AddServices';
 import Feedback from './component/Dashboard/Feedback/Feedback';
-
+import AllFeedback from './pages/AllFeedback/AllFeedback';
+import { createContext, useState } from 'react';
+export const MessageContext = createContext();
 function App() {
+  const [message, setMessage] = useState({
+    error: '',
+    success: '',
+  });
   return (
     <div className="App">
       <AuthProvider>
-        <Router>
-          <Switch>
-            <Route exact path="/">
-              <Home></Home>
-            </Route>
-            <Route exact path="/home">
-              <Home></Home>
-            </Route>
-            <Route exact path="/Banner">
-              <Banner></Banner>
-            </Route>
-            <Route exact path="/About">
-              <About></About>
-            </Route>
-            <Route exact path="/services">
-              <Services />
-            </Route>
-            <Route exact path="/contact">
-              <Contact></Contact>
-            </Route>
-            <PrivateRoute path="/dashboard">
-              <DashboardSlider></DashboardSlider>
-            </PrivateRoute>
-            <PrivateRoute path="/addService">
-              <AddServices />
-            </PrivateRoute>
-            <PrivateRoute path="/makeAdmin">
-              <MakeAdmin></MakeAdmin>
-            </PrivateRoute>
-            <PrivateRoute path="/feedback">
-              <Feedback />
-            </PrivateRoute>
-            <Route exact path="/login">
-              {' '}
-              <Login></Login>{' '}
-            </Route>
-            <Route exact path="/reg">
-              {' '}
-              <Reg> </Reg>
-            </Route>
-            <PrivateRoute exact path="/booking/:serviceId">
-              <Booking></Booking>
-            </PrivateRoute>
-            <Route exact path="/*">
-              <NotFound> </NotFound>
-            </Route>
-          </Switch>
-        </Router>
+        <MessageContext.Provider value={{ message, setMessage }}>
+          <Router>
+            <Switch>
+              <Route exact path="/">
+                <Home></Home>
+              </Route>
+              <Route exact path="/home">
+                <Home></Home>
+              </Route>
+              <Route exact path="/Banner">
+                <Banner></Banner>
+              </Route>
+              <Route exact path="/About">
+                <About></About>
+              </Route>
+              <Route exact path="/services">
+                <Services />
+              </Route>
+              <Route exact path="/contact">
+                <Contact></Contact>
+              </Route>
+              <Route path="/allClientFeedback">
+                <AllFeedback />
+              </Route>
+              <PrivateRoute path="/dashboard">
+                <DashboardSlider></DashboardSlider>
+              </PrivateRoute>
+              <PrivateRoute path="/addService">
+                <AddServices />
+              </PrivateRoute>
+              <PrivateRoute path="/makeAdmin">
+                <MakeAdmin></MakeAdmin>
+              </PrivateRoute>
+              <PrivateRoute path="/feedback">
+                <Feedback />
+              </PrivateRoute>
+              <Route exact path="/login">
+                {' '}
+                <Login></Login>{' '}
+              </Route>
+              <Route exact path="/reg">
+                {' '}
+                <Reg> </Reg>
+              </Route>
+              <PrivateRoute exact path="/booking/:serviceId">
+                <Booking></Booking>
+              </PrivateRoute>
+              <Route exact path="/*">
+                <NotFound> </NotFound>
+              </Route>
+            </Switch>
+          </Router>
+        </MessageContext.Provider>
       </AuthProvider>
     </div>
   );

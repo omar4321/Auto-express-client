@@ -1,18 +1,28 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './AddServices.css';
-import { Button, Form, FormGroup, Row } from 'react-bootstrap';
-import { FilePond, registerPlugin } from 'react-filepond';
+import { useForm } from 'react-hook-form';
+import { Button, Form, FormControl, FormGroup, Row } from 'react-bootstrap';
 import DashboardSlider from '../DashboardSlider/DashboardSlider';
 import DashboardStatus from '../DashbordPageStatus/DashboardStatus';
 
-export default function AddServices() {
-  document.body.style.backgroundColor = '#e5e5e5';
-  const [files, setFiles] = useState([]);
-  const [service, setService] = useState({
-    title: '',
-    description: '',
-  });
+import Axios from 'axios';
 
+export default function AddServices() {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+    Axios.post('http://localhost:5000/carcollection', data).then((res) => {
+      if (res.data.insertedId) {
+        alert('added successfully');
+        reset();
+      }
+    });
+  };
   return (
     <div>
       <Row>
@@ -26,53 +36,24 @@ export default function AddServices() {
               className="col-md-12 my-5 dashboardContainer"
               style={{ backgroundColor: '#e5e5e5' }}
             >
-              <Form className="addServiceForm my-5">
-                <Row>
-                  <div className="col-md-6">
-                    <FormGroup>
-                      <Form.Label>Service Title</Form.Label>
-                      <Form.Control
-                        required
-                        type="text"
-                        className="title"
-                        style={{ height: '45px' }}
-                        name="title"
-                        placeholder="Enter title"
-                      />
-                    </FormGroup>
-                    <FormGroup>
-                      <Form.Label>Description</Form.Label>
-                      <textarea
-                        required
-                        className="form-control description"
-                        name="description"
-                        placeholder="Enter description"
-                        rows="3"
-                      ></textarea>
-                    </FormGroup>
-                  </div>
-                  <div className="col-md-6">
-                    <FormGroup>
-                      <Form.Label>Icon</Form.Label>
-                      <FilePond
-                        files={files}
-                        required={true}
-                        allowFileEncode={true}
-                        onupdatefiles={setFiles}
-                        allowMultiple={false}
-                        maxFiles={3}
-                        name="files"
-                        labelIdle="Drag & Drop your photo"
-                      />
-                    </FormGroup>
-                  </div>
-                  <div className=" addServiceBtn mt-5 pr-5 col-sm-12 d-flex align-items-center justify-content-end">
-                    <Button className="commonBtn" type="submit">
-                      Add Service
-                    </Button>
-                  </div>
-                </Row>
-              </Form>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                {/* register your input into the hook by invoking the "register" function */}
+                <input {...register('name')} placeholder="enter name" />
+
+                {/* include validation with required or other standard HTML validation rules */}
+                <input {...register('description')} placeholder="description" />
+                <input
+                  type="number"
+                  {...register('price')}
+                  placeholder="price"
+                />
+                <input {...register('img')} placeholder="img-url" />
+
+                {/* errors will return when field validation fails  */}
+                {errors.exampleRequired && <span>This field is required</span>}
+
+                <input type="submit" />
+              </form>
             </div>
           </Row>
         </div>
